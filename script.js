@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             data[key] = value;
         });
 
-        fetch("https://api.sheet.best/api/sheets/YOUR-SHEET-ID", {
+        fetch("https://sheetdb.io/api/v1/hpd9uqxdnxjc9", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
