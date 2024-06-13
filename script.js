@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     const nacionalidade = document.getElementById("nacionalidade");
     const passaporteSection = document.getElementById("passaporte-section");
-    const passaporteFamiliarSection = document.getElementById("passaporte-familiar-section");
+    const fotoPassaporteSection = document.getElementById("foto-passaporte-section");
 
     nacionalidade.addEventListener("change", function() {
         if (nacionalidade.value === "estrangeiro") {
             passaporteSection.style.display = "block";
+            fotoPassaporteSection.style.display = "block";
         } else {
             passaporteSection.style.display = "none";
+            fotoPassaporteSection.style.display = "none";
         }
     });
 
@@ -16,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const formData = new FormData(this);
         const data = {};
-        
+
         formData.forEach((value, key) => {
             data[key] = value;
         });
 
-        fetch("https://example.com/submit-form", {
+        fetch("https://api.sheet.best/api/sheets/YOUR-SHEET-ID", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
